@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "es2015",
+        "target": "es5",
+        "declaration": true,
+        "rootDir": "src",
+        "outDir": "dist"
+    },
+    "files": [
+        "src/main.ts"
+    ]
+}
