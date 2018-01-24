@@ -1,0 +1,44 @@
+{
+  "name": "colorado",
+  "version": "0.0.1",
+  "main": "dist/colorado.js",
+  "scripts": {
+    "build": "rm -rf dist && rollup -c",
+    "lint": "tslint --project tsconfig.json",
+    "pretest": "yarn run lint",
+    "test": "jest",
+    "prepare": "yarn run test && yarn run build"
+  },
+  "repository": "github:binarysound/colorado",
+  "contributors": [
+    "Hyunsu Lim <bookman1209@gmail.com>",
+    "Jeongho Jeong <fiil12@hotmail.com>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^22.1.0",
+    "jest": "^22.1.4",
+    "rollup": "^0.55.0",
+    "rollup-plugin-typescript2": "^0.10.0",
+    "ts-jest": "^22.0.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "transform": {
+      "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/*.spec.ts"
+    ]
+  },
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ]
+}
