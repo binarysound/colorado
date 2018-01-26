@@ -5,7 +5,7 @@
   "scripts": {
     "typedoc": "typedoc --out doc src",
     "build": "yarn run typedoc && rm -rf dist && rollup -c",
-    "lint": "tslint --project tsconfig.json",
+    "lint": "tslint --project tsconfig.lint.json",
     "pretest": "yarn run lint",
     "test": "jest",
     "prepublishOnly": "yarn run test && yarn run build"
