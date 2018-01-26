@@ -7,7 +7,7 @@
     "build": "yarn run typedoc && rm -rf dist && rollup -c",
     "lint": "tslint --project tsconfig.lint.json",
     "pretest": "yarn run lint",
-    "test": "jest",
+    "test": "jest --coverage",
     "prepublishOnly": "yarn run test && yarn run build"
   },
   "repository": "github:binarysound/colorado",
@@ -36,7 +36,8 @@
     },
     "testMatch": [
       "**/*.spec.ts"
-    ]
+    ],
+    "mapCoverage": true
   },
   "types": "dist/main.d.ts",
   "files": [
