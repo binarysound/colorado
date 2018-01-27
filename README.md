@@ -1,3 +1,5 @@
+[![Travis](https://img.shields.io/travis/binarysound/colorado.svg)]()
+
 # COLORADO
 
 Why Colorado? Cause it's beautiful! :)
