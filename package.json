@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "main": "dist/colorado.js",
   "scripts": {
-    "build": "rm -rf dist && rollup -c",
+    "typedoc": "typedoc --out doc src",
+    "build": "yarn run typedoc && rm -rf dist && rollup -c",
     "lint": "tslint --project tsconfig.json",
     "pretest": "yarn run lint",
     "test": "jest",
@@ -22,6 +23,7 @@
     "rollup-plugin-typescript2": "^0.10.0",
     "ts-jest": "^22.0.1",
     "tslint": "^5.9.1",
+    "typedoc": "^0.9.0",
     "typescript": "^2.6.2"
   },
   "jest": {
