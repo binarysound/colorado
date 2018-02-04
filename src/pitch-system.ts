@@ -2,7 +2,7 @@ import { ColoradoError } from './util'
 
 import TuningSystem, { defaultTuningSystem } from './tuning-system'
 
-interface IConstructorOpt {
+export interface IConstructorOpt {
   concertPitch?: number,
   tuningSystem?: TuningSystem,
 }
