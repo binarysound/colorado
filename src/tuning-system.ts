@@ -1,6 +1,6 @@
 import { ColoradoError } from './util'
 
-interface IConstructorOpt {
+export interface IConstructorOpt {
   isEqualTemperament?: boolean,
   ratiosToConcertPitch?: number[],
   numberOfTones?: number,

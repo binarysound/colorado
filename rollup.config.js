@@ -7,6 +7,9 @@ export default {
     format: 'cjs',
   },
   plugins: [
-    typescript()
+    typescript({
+      tsconfig: 'tsconfig.prod.json',
+      typescript: require('typescript'),
+    })
   ]
 }
