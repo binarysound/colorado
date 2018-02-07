@@ -37,7 +37,8 @@
     "testMatch": [
       "**/*.spec.ts"
     ],
-    "mapCoverage": true
+    "mapCoverage": true,
+    "setupFiles": ["<rootDir>/src/polyfill.ts"]
   },
   "types": "dist/main.d.ts",
   "files": [
