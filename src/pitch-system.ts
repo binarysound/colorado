@@ -1,5 +1,6 @@
 import { ColoradoError } from './util'
 
+import Pitch from './pitch'
 import TuningSystem, { defaultTuningSystem } from './tuning-system'
 
 export interface IConstructorOpt {
@@ -29,6 +30,24 @@ export default class PitchSystem {
 
     this.concertPitch = concertPitch
     this.tuningSystem = tuningSystem
+  }
+
+  public getFrequency(pitch: Pitch): number {
+    const numberOfTones = this.tuningSystem.numberOfTones
+
+    if (this.tuningSystem.isEqualTemperament) {
+      return this.concertPitch *
+        Math.pow(2, pitch.height / numberOfTones)
+    } else {
+      const ratiosToConcertPitch = this.tuningSystem.ratiosToConcertPitch
+      const octaveDiff = Math.floor(pitch.height / numberOfTones)
+      const mod = pitch.height % numberOfTones
+      const unitIntervalsToGoUp = mod < 0 ?
+        mod + numberOfTones : mod
+
+      return this.concertPitch *
+        Math.pow(2, octaveDiff) * ratiosToConcertPitch[unitIntervalsToGoUp]
+    }
   }
 }
 
