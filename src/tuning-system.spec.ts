@@ -1,5 +1,6 @@
 import { ColoradoError } from './util'
 
+import Pitch from './pitch'
 import TuningSystem, { defaultTuningSystem } from './tuning-system'
 
 describe('TuningSystem', () => {
@@ -108,5 +109,30 @@ describe('TuningSystem', () => {
       expect(defaultTuningSystem.isEqualTemperament).toBe(true)
       expect(defaultTuningSystem.numberOfTones).toBe(12)
     })
+  })
+
+  describe('getMidi', () => {
+    it('should return corresponding MIDI note number of given pitch', () => {
+      const pitch = new Pitch()
+
+      expect(defaultTuningSystem.getMidi(pitch)).toBe(69)
+    })
+
+    it(
+      'should not determine MIDI note number of non-12-tone tuning system',
+      () => {
+        const pitch = new Pitch()
+        const tuningSystem = new TuningSystem({
+          numberOfTones: 11,
+        })
+
+        expect(() => {
+          tuningSystem.getMidi(pitch)
+        }).toThrow(
+          'MIDI note number cannot be determined ' +
+          'if given pitch system is not consist of 12 tones.',
+        )
+      },
+    )
   })
 })
