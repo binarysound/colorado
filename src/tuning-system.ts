@@ -71,6 +71,13 @@ export default class TuningSystem {
       */
       return pitch.height + 69
     } else {
+      /*
+        TODO: We have a long-term plan to support microtones,
+        therefore we're going to provide some API that returns
+        MIDI note containing microtonal information.
+        In that case, this function should also work even if
+        given TuningSystem doesn't consist of 12 tones.
+      */
       throw new ColoradoError(
         'MIDI note number cannot be determined if given pitch system ' +
         'is not consist of 12 tones.',
