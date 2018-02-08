@@ -60,7 +60,7 @@ describe('PitchSystem', () => {
   })
 
   describe('getFrequency', () => {
-    const pitch0 = new Pitch()
+    const pitch0 = new Pitch(0)
     const pitch2 = new Pitch(2)
     const pitch3 = new Pitch(3)
 

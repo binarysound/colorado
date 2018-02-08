@@ -113,7 +113,7 @@ describe('TuningSystem', () => {
 
   describe('getMidi', () => {
     it('should return corresponding MIDI note number of given pitch', () => {
-      const pitch = new Pitch()
+      const pitch = new Pitch(0)
 
       expect(defaultTuningSystem.getMidi(pitch)).toBe(69)
     })
@@ -121,7 +121,7 @@ describe('TuningSystem', () => {
     it(
       'should not determine MIDI note number of non-12-tone tuning system',
       () => {
-        const pitch = new Pitch()
+        const pitch = new Pitch(0)
         const tuningSystem = new TuningSystem({
           numberOfTones: 11,
         })
