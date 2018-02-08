@@ -130,7 +130,7 @@ describe('TuningSystem', () => {
           tuningSystem.getMidi(pitch)
         }).toThrow(
           'MIDI note number cannot be determined ' +
-          'if given pitch system is not consist of 12 tones.',
+          'if given pitch system does not consist of 12 tones.',
         )
       },
     )

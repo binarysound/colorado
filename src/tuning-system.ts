@@ -80,7 +80,7 @@ export default class TuningSystem {
       */
       throw new ColoradoError(
         'MIDI note number cannot be determined if given pitch system ' +
-        'is not consist of 12 tones.',
+        'does not consist of 12 tones.',
       )
     }
   }
