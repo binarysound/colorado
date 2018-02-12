@@ -22,6 +22,7 @@ describe('Pitch.isValidSPN', () => {
     expect(Pitch.isValidSPN('Gb')).toBe(false)
     expect(Pitch.isValidSPN('H')).toBe(false)
     expect(Pitch.isValidSPN('c')).toBe(false)
+    expect(Pitch.isValidSPN('d3')).toBe(false)
     expect(Pitch.isValidSPN('X4')).toBe(false)
     expect(Pitch.isValidSPN('4')).toBe(false)
     expect(Pitch.isValidSPN('Gk4')).toBe(false)
