@@ -1,43 +1,45 @@
 import { ColoradoError, integer } from './util'
 
+const spnRegex = /^([A-G](#|b)?)(-?([1-9][0-9]+|[0-9]))$/
+const heightOfPitchClass = {
+  'A': 0,
+  'A#': 1,
+  'Ab': -1,
+  'B': 2,
+  'B#': 3,
+  'Bb': 1,
+  'C': -9,
+  'C#': -8,
+  'Cb': -10,
+  'D': -7,
+  'D#': -6,
+  'Db': -8,
+  'E': -5,
+  'E#': -4,
+  'Eb': -6,
+  'F': -4,
+  'F#': -3,
+  'Fb': -5,
+  'G': -2,
+  'G#': -1,
+  'Gb': -3,
+}
+
 export default class Pitch {
   public static isValidSPN(spn: string): boolean {
-    return /^[A-G](#|b)?-?([1-9][0-9]+|[0-9])$/.test(spn)
+    return spnRegex.test(spn)
   }
 
   public static fromSPN(spn: string): Pitch {
     if (!Pitch.isValidSPN(spn)) {
       throw new ColoradoError('Valid SPN should be given')
     }
-    const spnRegex = /^([A-G](#|b)?)(-?([1-9][0-9]+|[0-9]))$/
     const match = spnRegex.exec(spn)
-    let height: number
-    switch (match[1]) {
-      // A4 is height 0
-      case 'A': height = 0; break
-      case 'A#':
-      case 'Bb': height = 1; break
-      case 'B': height = 2; break
-      case 'B#': height = 3; break
-      case 'Cb': height = -10; break
-      case 'C': height = -9; break
-      case 'C#':
-      case 'Db': height = -8; break
-      case 'D': height = -7; break
-      case 'D#':
-      case 'Eb': height = -6; break
-      case 'E':
-      case 'Fb': height = -5; break
-      case 'E#':
-      case 'F': height = -4; break
-      case 'F#':
-      case 'Gb': height = -3; break
-      case 'G': height = -2; break
-      case 'G#':
-      case 'Ab': height = -1; break
-    }
-    // Parse octave notation
-    height = height + 12 * (parseInt(match[3], 10) - 4)
+    const pitchClass = match[1]
+    const octave = match[3]
+
+    const octaveOffset = parseInt(octave, 10) - 4
+    const height = heightOfPitchClass[pitchClass] + 12 * octaveOffset
     return new Pitch(height)
   }
 
