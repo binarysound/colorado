@@ -1,29 +1,31 @@
 import { ColoradoError, integer } from './util'
 
 const spnRegex = /^([A-G](#|b)?)(-?([1-9][0-9]+|[0-9]))$/
+/* tslint:disable:object-literal-sort-keys */
 const heightOfPitchClass = {
-  'A': 0,
-  'A#': 1,
-  'Ab': -1,
-  'B': 2,
-  'B#': 3,
-  'Bb': 1,
+  'Cb': -10,
   'C': -9,
   'C#': -8,
-  'Cb': -10,
+  'Db': -8,
   'D': -7,
   'D#': -6,
-  'Db': -8,
+  'Eb': -6,
   'E': -5,
   'E#': -4,
-  'Eb': -6,
+  'Fb': -5,
   'F': -4,
   'F#': -3,
-  'Fb': -5,
+  'Gb': -3,
   'G': -2,
   'G#': -1,
-  'Gb': -3,
+  'Ab': -1,
+  'A': 0,
+  'A#': 1,
+  'Bb': 1,
+  'B': 2,
+  'B#': 3,
 }
+/* tslint:enable:object-literal-sort-keys */
 
 export default class Pitch {
   public static isValidSPN(spn: string): boolean {
