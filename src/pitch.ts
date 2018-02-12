@@ -30,6 +30,13 @@ export default class Pitch {
     return spnRegex.test(spn)
   }
 
+  /*
+  Be careful that the `Pitch` object returned by this `fromSPN` is meaningful
+  only if the current tuning system is 12 tone equal temperament (12-TET) or
+  12 tone just intonation. Check the following link for more details about
+  Scientific Pitch Notation (SPN).
+  https://en.wikipedia.org/wiki/Scientific_pitch_notation
+  */
   public static fromSPN(spn: string): Pitch {
     if (!Pitch.isValidSPN(spn)) {
       throw new ColoradoError('Valid SPN should be given')
