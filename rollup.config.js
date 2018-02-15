@@ -8,7 +8,12 @@ export default {
   },
   plugins: [
     typescript({
-      tsconfig: 'tsconfig.prod.json',
+      tsconfig: 'tsconfig.json',
+      tsconfigOverride: {
+        include: [
+          'src/main.ts',
+        ],
+      },
       typescript: require('typescript'),
     })
   ]
