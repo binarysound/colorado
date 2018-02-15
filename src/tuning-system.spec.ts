@@ -1,7 +1,7 @@
-import { ColoradoError } from './util'
+import { ColoradoError } from '@/util'
 
-import Pitch from './pitch'
-import TuningSystem, { defaultTuningSystem } from './tuning-system'
+import Pitch from '@/pitch'
+import TuningSystem, { defaultTuningSystem } from '@/tuning-system'
 
 describe('TuningSystem', () => {
   describe('constructor', () => {

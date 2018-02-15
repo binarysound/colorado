@@ -1,6 +1,6 @@
-import { ColoradoError } from './util'
+import { ColoradoError } from '@/util'
 
-import Pitch from './pitch'
+import Pitch from '@/pitch'
 
 export interface IConstructorOpt {
   isEqualTemperament?: boolean,

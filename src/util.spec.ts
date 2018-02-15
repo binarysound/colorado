@@ -1,4 +1,4 @@
-import { integer } from './util'
+import { integer } from '@/util'
 
 describe('integer', () => {
   class Test {

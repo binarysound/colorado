@@ -1,4 +1,4 @@
-import Pitch from './pitch'
+import Pitch from '@/pitch'
 
 describe('Pitch', () => {
   it('should be initialized with height', () => {
