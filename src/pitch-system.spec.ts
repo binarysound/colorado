@@ -1,6 +1,6 @@
-import Pitch from './pitch'
-import PitchSystem, { defaultPitchSystem } from './pitch-system'
-import TuningSystem, { defaultTuningSystem } from './tuning-system'
+import Pitch from '@/pitch'
+import PitchSystem, { defaultPitchSystem } from '@/pitch-system'
+import TuningSystem, { defaultTuningSystem } from '@/tuning-system'
 
 describe('PitchSystem', () => {
   describe('constructor', () => {

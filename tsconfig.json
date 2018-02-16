@@ -5,9 +5,13 @@
         "declaration": true,
         "rootDir": "src",
         "outDir": "dist",
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*"]
+        }
     },
     "include": [
-        "src"
+        "src/*"
     ]
 }

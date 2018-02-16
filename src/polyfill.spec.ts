@@ -1,4 +1,4 @@
-import { isInteger } from './polyfill'
+import { isInteger } from '@/polyfill'
 
 describe('Polyfill', () => {
   describe('Number', () => {

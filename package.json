@@ -38,7 +38,10 @@
       "**/*.spec.ts"
     ],
     "mapCoverage": true,
-    "setupFiles": ["<rootDir>/src/polyfill.ts"]
+    "setupFiles": ["<rootDir>/src/polyfill.ts"],
+    "moduleNameMapper": {
+      "@/(.*)$": "<rootDir>/src/$1"
+    }
   },
   "types": "dist/main.d.ts",
   "files": [

@@ -1,4 +1,4 @@
-import { ColoradoError, integer } from './util'
+import { ColoradoError, integer } from '@/util'
 
 const spnRegex = /^([A-G](#|b)?)(-?([1-9][0-9]+|[0-9]))$/
 /* tslint:disable:object-literal-sort-keys */
